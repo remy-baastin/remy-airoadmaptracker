@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Engineer Roadmap — 30‑Week Day‑by‑Day (7‑Day Balanced, Colorful Tags)</title>
+    <style>
+        :root {
+            --bg: #f8f9fa; --card-bg: #ffffff; --card-bg-secondary: #fcfcfd;
+            --text-primary: #212529; --text-secondary: #6c757d; --text-tertiary: #868e96;
+            --border: #e9ecef; --border-light: #f1f3f5; --hover-bg: #f8f9fa;
+            --hover-phase: #f8f9ff; --note-bg: #FFF8E7; --note-border: #F0A92D;
+            --note-text: #5c4a1f; --milestone-bg: #f0faf5; --milestone-border: #d3f0e0;
+            --milestone-text: #0b4f2e; --shadow-sm: 0 1px 4px rgba(0,0,0,0.03);
+            --shadow-md: 0 2px 12px rgba(0,0,0,0.04); --shadow-lg: 0 6px 16px rgba(0,0,0,0.06);
+            --progress-track: #e9ecef; --progress-fill: #1D9E75; --progress-fill-glow: #2ecc71;
+            --tag-bg-default: #f1f3f5; --tag-text-default: #495057; --focus-ring: #3b82f6;
+            --danger: #dc3545; --danger-hover: #c82333; --toolbar-bg: #ffffff;
+            --input-bg: #ffffff; --input-border: #ced4da; --phase-body-bg: #fcfcfd;
+            --week-check-border: #ced4da; --week-check-hover-bg: #e6f7f0;
+            --badge-bg: #f1f3f5; --badge-text: #6c757d; --divider: #f1f3f5;
+            --ring-bg: #e9ecef; --tab-active-bg: #ffffff; --tab-inactive-bg: #f1f3f5;
+            --tab-text: #6c757d; --tab-active-text: #1D9E75;
+            --day-bg: #fafbfc; --day-border: #eee; --day-check-done: #1D9E75;
+            --tag-strang-bg: #E6F1FB; --tag-strang-text: #0C447C;
+            --tag-mfml-bg: #EEEDFE; --tag-mfml-text: #3C3489;
+            --tag-nnfs-bg: #FAECE7; --tag-nnfs-text: #712B13;
+            --tag-llmbook-bg: #FAEEDA; --tag-llmbook-text: #633806;
+            --tag-deepml-bg: #EAF3DE; --tag-deepml-text: #27500A;
+            --tag-torchleet-bg: #FBEAF0; --tag-torchleet-text: #72243E;
+            --tag-roadmap-bg: #E1F5EE; --tag-roadmap-text: #085041;
+            --tag-paper-bg: #FCEBEB; --tag-paper-text: #791F1F;
+            --tag-project-bg: #F1EFE8; --tag-project-text: #2C2C2A;
+            --tag-review-bg: #FFF2E5; --tag-review-text: #9A4D00;
+            --tag-setup-bg: #E8F4FD; --tag-setup-text: #003D5B;
+            --tag-study-bg: #F0EDFF; --tag-study-text: #3C2F8C;
+        }
+        body.dark {
+            --bg: #1a1a2e; --card-bg: #222240; --card-bg-secondary: #252545;
+            --text-primary: #e0e0e8; --text-secondary: #a0a0b8; --text-tertiary: #8888a0;
+            --border: #333358; --border-light: #2a2a48; --hover-bg: #2a2a48;
+            --hover-phase: #2a2a50; --note-bg: #3d3520; --note-border: #8a6d20;
+            --note-text: #c4a84a; --milestone-bg: #1a3028; --milestone-border: #2a5040;
+            --milestone-text: #5cd8a0; --shadow-sm: 0 1px 4px rgba(0,0,0,0.15);
+            --shadow-md: 0 2px 12px rgba(0,0,0,0.2); --shadow-lg: 0 6px 16px rgba(0,0,0,0.25);
+            --progress-track: #333358; --tag-bg-default: #2a2a48; --tag-text-default: #b0b0c8;
+            --focus-ring: #60a5fa; --toolbar-bg: #222240; --input-bg: #1e1e38;
+            --input-border: #444468; --phase-body-bg: #1e1e3a;
+            --week-check-border: #555578; --week-check-hover-bg: #1a3a2a;
+            --badge-bg: #2a2a48; --badge-text: #a0a0b8; --divider: #2a2a48;
+            --ring-bg: #333358; --tab-active-bg: #222240; --tab-inactive-bg: #1e1e38;
+            --tab-text: #8888a0; --tab-active-text: #4ade80;
+            --day-bg: #1f1f3a; --day-border: #333358; --day-check-done: #4ade80;
+            --tag-strang-bg: #1a2a44; --tag-strang-text: #7eb8f4;
+            --tag-mfml-bg: #232252; --tag-mfml-text: #9d97f0;
+            --tag-nnfs-bg: #2a1a1a; --tag-nnfs-text: #e09b8c;
+            --tag-llmbook-bg: #2a2416; --tag-llmbook-text: #e0c27c;
+            --tag-deepml-bg: #1a2a16; --tag-deepml-text: #8bc47c;
+            --tag-torchleet-bg: #2a1a24; --tag-torchleet-text: #e09bb0;
+            --tag-roadmap-bg: #162a26; --tag-roadmap-text: #7cc4b8;
+            --tag-paper-bg: #2a1616; --tag-paper-text: #e09b9b;
+            --tag-project-bg: #2a2a1a; --tag-project-text: #c4c47c;
+            --tag-review-bg: #2a1a0a; --tag-review-text: #e0b87c;
+            --tag-setup-bg: #162a3a; --tag-setup-text: #7cb8e0;
+            --tag-study-bg: #1a163a; --tag-study-text: #9d97e0;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg); color: var(--text-primary); padding: 1.5rem;
+            line-height: 1.5; transition: background 0.3s, color 0.3s; min-height: 100vh;
+        }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+        .roadmap { max-width: 760px; margin: 0 auto; }
+        .tab-nav { display: flex; gap: 4px; margin-bottom: 1.5rem; background: var(--card-bg); padding: 5px; border-radius: 28px; box-shadow: var(--shadow-sm); border: 1px solid var(--border); }
+        .tab-btn { flex: 1; padding: 0.65rem 1rem; border-radius: 24px; border: none; background: transparent; font-size: 0.9rem; font-weight: 500; cursor: pointer; color: var(--tab-text); transition: all 0.2s; font-family: inherit; white-space: nowrap; }
+        .tab-btn.active { background: var(--tab-active-bg); color: var(--tab-active-text); font-weight: 600; box-shadow: var(--shadow-sm); }
+        .tab-btn:hover:not(.active) { color: var(--text-primary); background: var(--hover-bg); }
+        .toolbar { display: flex; align-items: center; gap: 10px; justify-content: flex-end; margin-bottom: 1rem; flex-wrap: wrap; }
+        .toolbar button, .toolbar .btn-icon { display: inline-flex; align-items: center; gap: 6px; padding: 0.45rem 0.85rem; border-radius: 22px; border: 1px solid var(--border); background: var(--toolbar-bg); color: var(--text-secondary); cursor: pointer; font-size: 0.8rem; font-weight: 500; transition: all 0.2s; white-space: nowrap; font-family: inherit; }
+        .toolbar button:hover, .toolbar .btn-icon:hover { background: var(--hover-bg); color: var(--text-primary); border-color: var(--text-tertiary); }
+        .toolbar .btn-icon { width: 36px; height: 36px; padding: 0; justify-content: center; border-radius: 50%; font-size: 1.1rem; }
+        .toolbar .btn-danger { color: var(--danger); border-color: transparent; background: transparent; font-size: 0.75rem; }
+        .toolbar .btn-danger:hover { background: #fff0f0; color: #b91c1c; }
+        body.dark .toolbar .btn-danger:hover { background: #3d1a1a; color: #f87171; }
+        .dashboard { background: var(--card-bg); border-radius: 20px; padding: 1.5rem 1.75rem; margin-bottom: 1.25rem; box-shadow: var(--shadow-md); border: 1px solid var(--border); display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; transition: background 0.3s, border 0.3s; }
+        .dash-ring-wrap { flex-shrink: 0; position: relative; width: 110px; height: 110px; }
+        .dash-ring-wrap svg { width: 110px; height: 110px; transform: rotate(-90deg); }
+        .dash-ring-bg { fill: none; stroke: var(--ring-bg); stroke-width: 10; }
+        .dash-ring-fill { fill: none; stroke: var(--progress-fill); stroke-width: 10; stroke-linecap: round; transition: stroke-dashoffset 0.8s cubic-bezier(0.23,1,0.32,1); }
+        .dash-ring-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); text-align: center; pointer-events: none; }
+        .dash-ring-pct { font-size: 1.6rem; font-weight: 700; color: var(--text-primary); line-height: 1; }
+        .dash-ring-label { font-size: 0.7rem; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; }
+        .dash-stats { flex: 1; min-width: 200px; display: flex; flex-direction: column; gap: 0.6rem; }
+        .dash-stat-row { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--text-secondary); }
+        .dash-stat-row .stat-icon { font-size: 1.1rem; flex-shrink: 0; }
+        .dash-stat-row strong { color: var(--text-primary); font-weight: 600; }
+        .dash-motivation { font-size: 0.85rem; color: var(--progress-fill); font-weight: 500; margin-top: 2px; }
+        .quick-jump { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1rem; }
+        .quick-jump .chip { padding: 0.4rem 0.9rem; border-radius: 20px; font-size: 0.78rem; font-weight: 600; cursor: pointer; border: 1.5px solid transparent; transition: all 0.2s; user-select: none; white-space: nowrap; background: var(--card-bg); color: var(--text-secondary); border-color: var(--border); }
+        .quick-jump .chip:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--text-tertiary); }
+        .quick-jump .chip.active-chip { border-color: var(--progress-fill); color: var(--progress-fill); background: #e6f7f0; }
+        body.dark .quick-jump .chip.active-chip { background: #1a3028; }
+        .progress-bar-wrap { background: var(--card-bg); border-radius: 16px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; box-shadow: var(--shadow-sm); border: 1px solid var(--border); transition: background 0.3s, border 0.3s; }
+        .progress-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .progress-label { font-size: 0.9rem; font-weight: 600; color: var(--text-primary); }
+        .progress-count { font-size: 0.8rem; font-weight: 500; color: var(--text-secondary); background: var(--badge-bg); padding: 0.2rem 0.75rem; border-radius: 20px; }
+        .progress-track { height: 8px; background: var(--progress-track); border-radius: 8px; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--progress-fill), var(--progress-fill-glow)); border-radius: 8px; transition: width 0.6s cubic-bezier(0.23,1,0.32,1); }
+        .search-wrap { margin-bottom: 1rem; position: relative; }
+        .search-wrap input { width: 100%; padding: 0.7rem 1rem 0.7rem 2.5rem; border-radius: 25px; border: 1.5px solid var(--input-border); background: var(--input-bg); font-size: 0.9rem; color: var(--text-primary); transition: all 0.2s; font-family: inherit; outline: none; }
+        .search-wrap input:focus { border-color: var(--focus-ring); box-shadow: 0 0 0 3px rgba(59,130,246,0.15); }
+        .search-wrap .search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-tertiary); pointer-events: none; font-size: 1rem; }
+        .search-clear { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--text-tertiary); cursor: pointer; font-size: 1.1rem; display: none; padding: 4px; border-radius: 50%; line-height: 1; }
+        .search-clear.visible { display: block; }
+        .search-clear:hover { color: var(--text-primary); background: var(--hover-bg); }
+        .resources-container { background: var(--card-bg); border-radius: 20px; padding: 1.5rem 1.75rem; box-shadow: var(--shadow-md); border: 1px solid var(--border); }
+        .resource-group { margin-bottom: 1.5rem; }
+        .resource-group h3 { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 6px; }
+        .resource-list { list-style: none; padding-left: 0; }
+        .resource-list li { padding: 0.6rem 0.8rem; border-radius: 10px; margin-bottom: 4px; font-size: 0.9rem; color: var(--text-secondary); display: flex; align-items: baseline; gap: 8px; transition: background 0.2s; }
+        .resource-list li:hover { background: var(--hover-bg); }
+        .resource-bullet { width: 8px; height: 8px; border-radius: 50%; background: var(--progress-fill); flex-shrink: 0; margin-top: 6px; }
+        .resource-desc { color: var(--text-tertiary); font-size: 0.8rem; margin-left: 4px; }
+        .paper-item { font-style: italic; color: var(--text-secondary); }
+        .phase-header { display: flex; align-items: center; gap: 14px; padding: 1rem 1.5rem; margin-bottom: 4px; border-radius: 16px; background: var(--card-bg); box-shadow: var(--shadow-sm); border: 1px solid var(--border); cursor: pointer; user-select: none; transition: all 0.2s; position: relative; }
+        .phase-header:hover { background: var(--hover-phase); box-shadow: var(--shadow-md); }
+        .phase-icon { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; flex-shrink: 0; }
+        .phase-title { flex: 1; min-width: 0; }
+        .phase-title h2 { font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 0; }
+        .phase-title p { font-size: 0.82rem; color: var(--text-secondary); margin-top: 3px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .phase-progress { font-size: 0.78rem; font-weight: 600; color: var(--text-secondary); background: var(--badge-bg); padding: 0.2rem 0.75rem; border-radius: 20px; white-space: nowrap; }
+        .phase-toggle { font-size: 1rem; color: var(--text-tertiary); transition: transform 0.3s; display: flex; align-items: center; flex-shrink: 0; }
+        .phase-toggle.open { transform: rotate(180deg); }
+        .phase-check-all { font-size: 0.7rem; padding: 0.25rem 0.6rem; border-radius: 14px; border: 1px solid var(--border); background: transparent; color: var(--text-tertiary); cursor: pointer; transition: all 0.2s; white-space: nowrap; font-family: inherit; flex-shrink: 0; }
+        .phase-check-all:hover { background: #e6f7f0; color: var(--progress-fill); border-color: var(--progress-fill); }
+        body.dark .phase-check-all:hover { background: #1a3028; }
+        .phase-body { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease; }
+        .phase-body.open { max-height: 9999px; opacity: 1; }
+        .week-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; margin: 10px 0; overflow: hidden; box-shadow: var(--shadow-sm); transition: box-shadow 0.2s, border-color 0.2s, opacity 0.3s; }
+        .week-card:hover { box-shadow: var(--shadow-lg); }
+        .week-card.focused { border-color: var(--focus-ring) !important; box-shadow: 0 0 0 3px rgba(59,130,246,0.2) !important; }
+        .week-card.filtered-out { display: none; }
+        .week-header { display: flex; align-items: center; gap: 12px; padding: 12px 18px; cursor: pointer; background: var(--card-bg); transition: background 0.2s; flex-wrap: wrap; }
+        .week-header:hover { background: var(--hover-bg); }
+        .week-num { font-size: 0.78rem; font-weight: 600; color: var(--text-tertiary); min-width: 58px; text-transform: uppercase; letter-spacing: 0.04em; }
+        .week-title { font-size: 0.93rem; font-weight: 500; color: var(--text-primary); flex: 1; }
+        .week-day-progress { font-size: 0.7rem; background: var(--badge-bg); color: var(--text-secondary); padding: 0.15rem 0.5rem; border-radius: 12px; white-space: nowrap; margin-right: 6px; }
+        .week-check { width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--week-check-border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.2s; cursor: pointer; position: relative; }
+        .week-check:hover { border-color: var(--progress-fill); background: var(--week-check-hover-bg); }
+        .week-check.done { background: var(--progress-fill); border-color: var(--progress-fill); }
+        .week-check.done::after { content: ''; width: 5px; height: 9px; border: 2px solid white; border-top: none; border-left: none; transform: rotate(45deg) translateY(-1px); position: absolute; top: 3px; }
+        .week-note-btn { background: none; border: none; cursor: pointer; font-size: 1rem; color: var(--text-tertiary); padding: 4px; border-radius: 6px; transition: all 0.2s; flex-shrink: 0; line-height: 1; }
+        .week-note-btn:hover { color: var(--text-primary); background: var(--hover-bg); }
+        .week-note-btn.has-note { color: #F0A92D; }
+        .week-body { max-height: 0; overflow: hidden; opacity: 0; padding: 0 18px; background: var(--phase-body-bg); border-top: 1px solid var(--divider); transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease, padding 0.4s ease; }
+        .week-body.open { max-height: 8000px; opacity: 1; padding: 16px 18px 18px; }
+        .week-note-input { width: 100%; min-height: 50px; padding: 10px 12px; border-radius: 10px; border: 1.5px solid var(--border); background: var(--card-bg); color: var(--text-primary); font-family: inherit; font-size: 0.85rem; resize: vertical; transition: border 0.2s; margin-bottom: 10px; outline: none; }
+        .week-note-input:focus { border-color: var(--focus-ring); box-shadow: 0 0 0 3px rgba(59,130,246,0.08); }
+        .week-note-input::placeholder { color: var(--text-tertiary); font-style: italic; }
+        .day-list { display: flex; flex-direction: column; gap: 8px; }
+        .day-item { background: var(--day-bg); border: 1px solid var(--day-border); border-radius: 10px; padding: 10px 14px; display: flex; align-items: flex-start; gap: 10px; transition: background 0.2s; }
+        .day-item:hover { background: var(--hover-bg); }
+        .day-checkbox { width: 18px; height: 18px; border-radius: 4px; border: 2px solid var(--week-check-border); flex-shrink: 0; margin-top: 2px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+        .day-checkbox.done { background: var(--day-check-done); border-color: var(--day-check-done); }
+        .day-checkbox.done::after { content: ''; width: 4px; height: 8px; border: 2px solid white; border-top: none; border-left: none; transform: rotate(45deg) translateY(-1px); }
+        .day-label { font-weight: 600; font-size: 0.82rem; color: var(--text-primary); min-width: 60px; }
+        .day-tasks { color: var(--text-secondary); font-size: 0.84rem; line-height: 1.6; }
+        .day-tasks ul { list-style: none; padding: 0; margin: 0; }
+        .day-tasks li { margin-bottom: 2px; }
+        .day-tasks li::before { content: '•'; color: var(--text-tertiary); margin-right: 6px; }
+        .resource-tag {
+            display: inline-block; font-size: 0.7rem; font-weight: 600;
+            padding: 0.1rem 0.45rem; border-radius: 10px; margin-left: 4px;
+            vertical-align: middle; letter-spacing: 0.02em; line-height: 1.4;
+        }
+        .tag-strang { background: var(--tag-strang-bg); color: var(--tag-strang-text); }
+        .tag-mfml { background: var(--tag-mfml-bg); color: var(--tag-mfml-text); }
+        .tag-nnfs { background: var(--tag-nnfs-bg); color: var(--tag-nnfs-text); }
+        .tag-llmbook { background: var(--tag-llmbook-bg); color: var(--tag-llmbook-text); }
+        .tag-deepml { background: var(--tag-deepml-bg); color: var(--tag-deepml-text); }
+        .tag-torchleet { background: var(--tag-torchleet-bg); color: var(--tag-torchleet-text); }
+        .tag-roadmap { background: var(--tag-roadmap-bg); color: var(--tag-roadmap-text); }
+        .tag-paper { background: var(--tag-paper-bg); color: var(--tag-paper-text); }
+        .tag-project { background: var(--tag-project-bg); color: var(--tag-project-text); }
+        .tag-review { background: var(--tag-review-bg); color: var(--tag-review-text); }
+        .tag-setup { background: var(--tag-setup-bg); color: var(--tag-setup-text); }
+        .tag-study { background: var(--tag-study-bg); color: var(--tag-study-text); }
+        .milestone { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px; background: var(--milestone-bg); border: 1px solid var(--milestone-border); margin-top: 12px; font-size: 0.88rem; color: var(--milestone-text); font-weight: 500; }
+        .note-box { padding: 10px 14px; border-radius: 12px; background: var(--note-bg); border-left: 4px solid var(--note-border); margin-top: 12px; font-size: 0.84rem; color: var(--note-text); display: flex; align-items: flex-start; gap: 8px; }
+        .note-box .note-icon { flex-shrink: 0; font-size: 1rem; margin-top: 1px; }
+        .confetti-container { position: fixed; pointer-events: none; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; }
+        .confetti-particle { position: absolute; font-size: 1.2rem; animation: confetti-fall 1.4s ease-out forwards; pointer-events: none; }
+        @keyframes confetti-fall { 0% { opacity: 1; transform: translate(0,0) rotate(0deg) scale(1); } 100% { opacity: 0; transform: translate(var(--dx),var(--dy)) rotate(var(--rot)) scale(0.3); } }
+        .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(80px); background: #1a1a2e; color: #fff; padding: 0.7rem 1.4rem; border-radius: 25px; font-size: 0.85rem; font-weight: 500; z-index: 10000; pointer-events: none; transition: transform 0.35s cubic-bezier(0.23,1,0.32,1); box-shadow: 0 8px 24px rgba(0,0,0,0.3); white-space: nowrap; }
+        .toast.show { transform: translateX(-50%) translateY(0); }
+        @media (max-width: 600px) {
+            body { padding: 0.75rem; }
+            .dashboard { flex-direction: column; align-items: center; text-align: center; padding: 1.25rem; gap: 1rem; }
+            .dash-stats { align-items: center; }
+            .dash-stat-row { justify-content: center; }
+            .phase-header { padding: 0.85rem 1rem; gap: 8px; flex-wrap: wrap; }
+            .phase-check-all { font-size: 0.65rem; padding: 0.2rem 0.5rem; }
+            .week-header { padding: 10px 12px; gap: 8px; }
+            .week-num { min-width: 44px; font-size: 0.7rem; }
+            .week-title { font-size: 0.82rem; }
+            .toolbar { justify-content: center; }
+            .quick-jump { justify-content: center; }
+            .quick-jump .chip { font-size: 0.7rem; padding: 0.3rem 0.7rem; }
+            .tab-nav { flex-direction: column; border-radius: 20px; }
+            .tab-btn { width: 100%; border-radius: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <h2 class="sr-only">30‑week AI Engineer day‑by‑day roadmap (7‑day balanced, colorful tags)</h2>
+    <div class="roadmap">
+        <div class="tab-nav">
+            <button class="tab-btn active" id="tab-roadmap" onclick="switchTab('roadmap')">🗺️ Roadmap</button>
+            <button class="tab-btn" id="tab-resources" onclick="switchTab('resources')">📚 Resources</button>
+        </div>
+        <div id="roadmap-view">
+            <div class="toolbar">
+                <button onclick="exportData()">📥 Export</button>
+                <button onclick="document.getElementById('import-file').click()">📤 Import</button>
+                <input type="file" id="import-file" accept=".json" style="display:none" onchange="importData(event)">
+                <button class="btn-icon" id="theme-toggle" onclick="toggleTheme()">🌙</button>
+                <button class="btn-danger" onclick="resetAll()">Reset all</button>
+            </div>
+            <div class="dashboard" id="dashboard">
+                <div class="dash-ring-wrap">
+                    <svg viewBox="0 0 120 120">
+                        <circle class="dash-ring-bg" cx="60" cy="60" r="52"/>
+                        <circle class="dash-ring-fill" id="dash-ring-fill" cx="60" cy="60" r="52" stroke-dasharray="326.73" stroke-dashoffset="326.73"/>
+                    </svg>
+                    <div class="dash-ring-center">
+                        <div class="dash-ring-pct" id="dash-pct">0%</div>
+                        <div class="dash-ring-label">weeks done</div>
+                    </div>
+                </div>
+                <div class="dash-stats">
+                    <div class="dash-stat-row"><span class="stat-icon">📍</span> <span>Current: <strong id="dash-current">Phase 1 · Week 1</strong></span></div>
+                    <div class="dash-stat-row"><span class="stat-icon">🏁</span> <span>Next milestone: <strong id="dash-milestone">Week 8</strong></span></div>
+                    <div class="dash-stat-row"><span class="stat-icon">⏳</span> <span>Remaining: <strong id="dash-remaining">30 weeks</strong></span></div>
+                    <div class="dash-motivation" id="dash-motivation">Ready to begin the journey! 🚀</div>
+                </div>
+            </div>
+            <div class="quick-jump" id="quick-jump"></div>
+            <div class="progress-bar-wrap">
+                <div class="progress-top">
+                    <span class="progress-label">Overall weeks</span>
+                    <span class="progress-count" id="global-count">0 / 30 weeks</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" id="global-bar" style="width:0%"></div></div>
+            </div>
+            <div class="search-wrap">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search-input" placeholder="Search weeks, days, tasks…" oninput="onSearch(this.value)">
+                <button class="search-clear" id="search-clear" onclick="clearSearch()">✕</button>
+            </div>
+            <div id="phases"></div>
+        </div>
+        <div id="resources-view" style="display:none;">
+            <div class="resources-container" id="resources-content"></div>
+        </div>
+    </div>
+    <div class="confetti-container" id="confetti-container"></div>
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // ── DATA: Every week now has 7 days with evenly spread tasks ──
+        const phases = [
+        { id:'p1', label:'Phase 1', title:'Mathematical Foundations', weeks:'Weeks 1–8', goal:'Build the math needed for ML, deep learning, transformers, and LLMs.', color:'#E6F1FB', textColor:'#0C447C',
+          weeks_data:[
+            { num:1, title:'Vectors & linear systems + setup', days:[
+                {label:'Day 1', tasks:['Configure Python env, Jupyter/Colab, GPU (Setup)', 'Gilbert Strang Lecture 1: linear equations (Strang)']},
+                {label:'Day 2', tasks:['Strang Lecture 2: matrix elimination (Strang)', 'Deep-ML: Matrix × Vector (Deep-ML)']},
+                {label:'Day 3', tasks:['Strang Lecture 3: matrix multiplication (Strang)', 'Deep-ML: Matrix Addition (Deep-ML)', 'Math for ML Chapter 2: vectors & vector operations (first half) (MfML)']},
+                {label:'Day 4', tasks:['Strang Lecture 4: elimination = factorization (Strang)', 'Math for ML Chapter 2 (second half) (MfML)']},
+                {label:'Day 5', tasks:['TorchLeet PyTorch Basics Track – first 5 problems (TorchLeet)', 'Deep-ML: Matrix Transformation, Matrix Multiplication (Deep-ML)']},
+                {label:'Day 6', tasks:['AI Engineer Roadmap: “What is AI Engineering”, AI vs ML Engineer, LLMs overview (Roadmap)', 'Review all Deep-ML problems solved this week (Review)']},
+                {label:'Day 7', tasks:['Write a short summary on key linear algebra concepts (Review)', 'Plan next week’s schedule (Setup)']}
+            ], note:'Spend Day 1 on setup. Having it solid now saves hours later.' },
+            { num:2, title:'Vector spaces', days:[
+                {label:'Day 1', tasks:['Strang Lecture 5: vector spaces and subspaces (Strang)', 'Math for ML: Span, Basis (start) (MfML)']},
+                {label:'Day 2', tasks:['Strang Lecture 6: column space and nullspace (Strang)', 'Math for ML: Basis, Subspaces (finish) (MfML)']},
+                {label:'Day 3', tasks:['Strang Lecture 7: solving Ax=0 (Strang)', 'Deep-ML: Linear Independence (Deep-ML)']},
+                {label:'Day 4', tasks:['Strang Lecture 8: complete solution of Ax=b (Strang)', 'Deep-ML: Rank of Matrix (Deep-ML)']},
+                {label:'Day 5', tasks:['TorchLeet PyTorch Basics – problems 6-10 (TorchLeet)']},
+                {label:'Day 6', tasks:['TorchLeet Basics – problems 11-15 (TorchLeet)', 'Deep-ML: basis-related problems (remaining) (Deep-ML)']},
+                {label:'Day 7', tasks:['Recap independence/span with examples (Review)', 'Implement vector space operations in NumPy (Project)']}
+            ]},
+            { num:3, title:'Orthogonality & projections', days:[
+                {label:'Day 1', tasks:['Strang Lecture 9: orthogonality (Strang)', 'Math for ML: Orthogonality (MfML)']},
+                {label:'Day 2', tasks:['Strang Lecture 10: projections (Strang)', 'Math for ML: Projections (MfML)']},
+                {label:'Day 3', tasks:['Strang Lecture 11: projection matrices (Strang)', 'Deep-ML: Dot Product, Cosine Similarity (Deep-ML)']},
+                {label:'Day 4', tasks:['Strang Lecture 12: Gram-Schmidt (Strang)', 'Deep-ML: Orthogonal Projection (Deep-ML)']},
+                {label:'Day 5', tasks:['Implement Gram-Schmidt in Python (Project)', 'Review projection formulas with small matrices (Review)']},
+                {label:'Day 6', tasks:['AI Engineer Roadmap: OpenAI Models, Claude, Gemini, Context Windows (Roadmap)']},
+                {label:'Day 7', tasks:['Write notes on projections and orthogonality (Review)', 'Explore cosine similarity use-cases (Study)']}
+            ]},
+            { num:4, title:'Eigenvalues & eigenvectors', days:[
+                {label:'Day 1', tasks:['Strang Lecture 13: eigenvalues introduction (Strang)', 'Math for ML: Eigenvalues, Eigenvectors (start) (MfML)']},
+                {label:'Day 2', tasks:['Strang Lectures 14-15: diagonalization, differential equations (Strang)']},
+                {label:'Day 3', tasks:['Math for ML: finish eigenvalues (MfML)', 'Deep-ML: Power Method (Deep-ML)']},
+                {label:'Day 4', tasks:['Strang Lectures 16-17: symmetric matrices, positive definite (Strang)', 'Deep-ML: Eigenvalue Problems (Deep-ML)']},
+                {label:'Day 5', tasks:['Strang Lecture 18: similar matrices (Strang)', 'Deep-ML: Matrix Diagonalization (Deep-ML)']},
+                {label:'Day 6', tasks:['TorchLeet: Tensor Algebra Collection (TorchLeet)']},
+                {label:'Day 7', tasks:['Implement power iteration from scratch (Project)', 'Review eigenvalues and practice on random matrices (Review)']}
+            ]},
+            { num:5, title:'SVD & dimensionality', days:[
+                {label:'Day 1', tasks:['Strang Lecture 19: singular value decomposition (Strang)', 'Math for ML: SVD (first half) (MfML)']},
+                {label:'Day 2', tasks:['Strang Lecture 20-21: SVD applications (Strang)', 'Math for ML: SVD (second half) (MfML)']},
+                {label:'Day 3', tasks:['Strang Lecture 22: linear transformations (Strang)', 'Deep-ML: SVD (Deep-ML)']},
+                {label:'Day 4', tasks:['Deep-ML: Low-Rank Approximation (Deep-ML)', 'AI Engineer Roadmap: Hugging Face, Open Source Models, Ollama (Roadmap)']},
+                {label:'Day 5', tasks:['Implement SVD from scratch in NumPy (Project)']},
+                {label:'Day 6', tasks:['Compare with np.linalg.svd (Project)', 'Experiment with low-rank approximations on images (Project)']},
+                {label:'Day 7', tasks:['Read about application of SVD in embeddings (Study)', 'Consolidate all week 5 notes (Review)']}
+            ]},
+            { num:6, title:'Probability', days:[
+                {label:'Day 1', tasks:['Math for ML: Probability chapter (intro, axioms) (MfML)']},
+                {label:'Day 2', tasks:['Math for ML: conditional probability, Bayes (MfML)', 'Deep-ML: Bayes Theorem problems (Deep-ML)']},
+                {label:'Day 3', tasks:['Math for ML: random variables, distributions (MfML)', 'Deep-ML: Probability Distributions (Deep-ML)']},
+                {label:'Day 4', tasks:['Math for ML: expectation, variance (MfML)', 'Deep-ML: Conditional Probability exercises (Deep-ML)']},
+                {label:'Day 5', tasks:['TorchLeet: Tensor Manipulation Collection (TorchLeet)']},
+                {label:'Day 6', tasks:['Simulate probability with coin/dice simulations in Python (Review)', 'Read about common distributions in ML (Study)']},
+                {label:'Day 7', tasks:['Implement Bayes classifier from scratch (Project)', 'Create a probability cheat sheet (Review)']}
+            ]},
+            { num:7, title:'Statistics', days:[
+                {label:'Day 1', tasks:['Math for ML: Statistics chapter (sampling, estimators) (MfML)']},
+                {label:'Day 2', tasks:['Math for ML: confidence intervals, hypothesis testing (MfML)', 'Deep-ML: Variance (Deep-ML)']},
+                {label:'Day 3', tasks:['Math for ML: maximum likelihood (MfML)', 'Deep-ML: Covariance (Deep-ML)']},
+                {label:'Day 4', tasks:['Deep-ML: Correlation (Deep-ML)', 'AI Engineer Roadmap: Prompt Engineering Basics, Tokenization Concepts (Roadmap)']},
+                {label:'Day 5', tasks:['Implement basic statistics functions in NumPy (Project)']},
+                {label:'Day 6', tasks:['Read “Probability vs Statistics” cheat sheet (Review)', 'Extra Deep-ML stats problems (Deep-ML)']},
+                {label:'Day 7', tasks:['Write a short report on MLE vs MAP (Review)', 'Review all Phase 1 math progress (Review)']}
+            ]},
+            { num:8, title:'Calculus + Phase 1 milestone', days:[
+                {label:'Day 1', tasks:['Math for ML: Calculus chapter (derivatives, gradients) (MfML)']},
+                {label:'Day 2', tasks:['Math for ML: partial derivatives, chain rule (MfML)', 'Deep-ML: Numerical Gradient (Deep-ML)']},
+                {label:'Day 3', tasks:['Deep-ML: Partial Derivatives (Deep-ML)', 'Deep-ML: Chain Rule Exercises (Deep-ML)']},
+                {label:'Day 4', tasks:['Implement gradient descent on a simple function (Project)']},
+                {label:'Day 5', tasks:['Build linear regression from scratch (NumPy) – forward, loss (Project)']},
+                {label:'Day 6', tasks:['Complete gradient descent for linear regression (Project)']},
+                {label:'Day 7', tasks:['Test on a small dataset, visualise cost decrease (Project)', 'Phase 1 milestone achieved! 🎉']}
+            ], milestone:'Build: linear regression from scratch + gradient descent from scratch (pure NumPy)' }
+          ]
+        },
+        { id:'p2', label:'Phase 2', title:'Neural Networks', weeks:'Weeks 9–14', goal:'Understand deep learning completely before touching transformers.', color:'#EEEDFE', textColor:'#3C3489',
+          weeks_data:[
+            { num:9, title:'Neurons, layers & forward pass', days:[
+                {label:'Day 1', tasks:['NNFS Chapter 1: neurons (NNFS)', 'Code a single neuron in NumPy (Project)']},
+                {label:'Day 2', tasks:['NNFS Chapter 2: dense layers (NNFS)', 'Deep-ML: Single Neuron (Deep-ML)']},
+                {label:'Day 3', tasks:['NNFS Chapter 3: forward pass (NNFS)']},
+                {label:'Day 4', tasks:['Deep-ML: Forward Propagation (Deep-ML)', 'TorchLeet: Linear Layers Collection (TorchLeet)']},
+                {label:'Day 5', tasks:['Implement forward pass for a small network (Project)']},
+                {label:'Day 6', tasks:['Review all NNFS code so far (Review)', 'Experiment with different layer sizes (Project)']},
+                {label:'Day 7', tasks:['Plot neuron outputs (Project)', 'Plan mini‑network architecture for next week (Setup)']}
+            ], note:'Use your Colab/GPU setup from Week 1 for all NNFS code.' },
+            { num:10, title:'Activation functions', days:[
+                {label:'Day 1', tasks:['NNFS Chapter 4: activation functions intro (NNFS)', 'Implement ReLU (Project)']},
+                {label:'Day 2', tasks:['Implement Sigmoid, Tanh (Project)', 'NNFS Chapter 5: Softmax (NNFS)']},
+                {label:'Day 3', tasks:['Deep-ML: Softmax (Deep-ML)', 'Deep-ML: Activation Functions exercises (Deep-ML)']},
+                {label:'Day 4', tasks:['TorchLeet: Activation Problems (TorchLeet)']},
+                {label:'Day 5', tasks:['Compare activations visually (plot gradients) (Review)', 'Add activations to your forward pass code (Project)']},
+                {label:'Day 6', tasks:['Test output shapes for each activation (Project)', 'Study vanishing gradient problem (Study)']},
+                {label:'Day 7', tasks:['Write a short note on when to use each activation (Review)', 'Explore Swish/GELU (Study)']}
+            ]},
+            { num:11, title:'Loss functions', days:[
+                {label:'Day 1', tasks:['NNFS Chapter 6: loss intro (NNFS)', 'Implement MSE loss (Project)']},
+                {label:'Day 2', tasks:['NNFS Chapter 7: categorical cross-entropy (NNFS)', 'Deep-ML: Cross-Entropy (Deep-ML)']},
+                {label:'Day 3', tasks:['NNFS Chapter 8: implementation details (NNFS)', 'Deep-ML: Classification Metrics (Deep-ML)']},
+                {label:'Day 4', tasks:['Code cross-entropy from scratch (Project)', 'Test with dummy predictions (Project)']},
+                {label:'Day 5', tasks:['Write loss function for your mini network (Project)']},
+                {label:'Day 6', tasks:['Understand numerical stability (softmax + cross-entropy) (Review)']},
+                {label:'Day 7', tasks:['Implement label smoothing (Project)', 'Review all loss functions covered (Review)']}
+            ]},
+            { num:12, title:'Backpropagation', days:[
+                {label:'Day 1', tasks:['NNFS Chapter 9: backpropagation concept (NNFS)', 'Manual gradient calculation for small net (Project)']},
+                {label:'Day 2', tasks:['NNFS Chapter 10: backpropagation code (NNFS)', 'Deep-ML: Gradient Computation (Deep-ML)']},
+                {label:'Day 3', tasks:['NNFS Chapter 11: backprop through layers (NNFS)', 'Deep-ML: Backprop Problems (Deep-ML)']},
+                {label:'Day 4', tasks:['TorchLeet: Autograd Collection (TorchLeet)', 'Implement backprop manually in NumPy (Project)']},
+                {label:'Day 5', tasks:['Verify gradients with numerical approximation (Project)']},
+                {label:'Day 6', tasks:['Integrate backprop into your mini framework (Project)']},
+                {label:'Day 7', tasks:['Watch 3Blue1Brown backpropagation video (Review)', 'Write a backprop derivation summary (Review)']}
+            ]},
+            { num:13, title:'Optimizers', days:[
+                {label:'Day 1', tasks:['NNFS Chapter 12: SGD (NNFS)', 'Implement vanilla SGD (Project)']},
+                {label:'Day 2', tasks:['NNFS Chapter 13: momentum (NNFS)', 'Add momentum to your SGD (Project)']},
+                {label:'Day 3', tasks:['NNFS Chapter 14: Adam (NNFS)', 'Deep-ML: Gradient Descent (Deep-ML)']},
+                {label:'Day 4', tasks:['Deep-ML: Adam Optimizer (Deep-ML)', 'NNFS Chapter 15: training loop (NNFS)']},
+                {label:'Day 5', tasks:['Build a complete training loop with your optimiser (Project)']},
+                {label:'Day 6', tasks:['Test on simple regression problem (Project)', 'Compare SGD vs Adam convergence (Project)']},
+                {label:'Day 7', tasks:['Read about learning rate schedules (Study)', 'Summarise optimizer pros/cons (Review)']}
+            ]},
+            { num:14, title:'Regularization + Phase 2 milestone', days:[
+                {label:'Day 1', tasks:['NNFS remaining chapters: L1/L2 regularization (NNFS)']},
+                {label:'Day 2', tasks:['Dropout implementation (Project)', 'Understand effect on training (Review)']},
+                {label:'Day 3', tasks:['Build MNIST classifier with fully-connected network (Project)']},
+                {label:'Day 4', tasks:['Train MNIST model, tune hyperparameters (Project)']},
+                {label:'Day 5', tasks:['Aim for >97% accuracy (Project)', 'Add regularisation (Project)']},
+                {label:'Day 6', tasks:['Evaluate on test set, write report (Project)', 'Experiment with batch normalisation (Project)']},
+                {label:'Day 7', tasks:['Wrap up Phase 2, celebrate milestone! 🎉 (Review)']}
+            ], milestone:'Build: MNIST classifier with fully-connected network. Target >97% accuracy.' }
+          ]
+        },
+        { id:'p3', label:'Phase 3', title:'Transformers & LLM Internals', weeks:'Weeks 15–20', goal:'Reach GPT-level understanding of how large language models work.', color:'#FAEEDA', textColor:'#633806',
+          weeks_data:[
+            { num:15, title:'Why LLMs work + GPT overview', days:[
+                {label:'Day 1', tasks:['LLM Book Chapter 1: why LLMs work (LLM Book)', 'AI Engineer Roadmap: Inference, Training (Roadmap)']},
+                {label:'Day 2', tasks:['TorchLeet: NLP Foundations Track (first half) (TorchLeet)']},
+                {label:'Day 3', tasks:['TorchLeet: NLP Foundations (second half) (TorchLeet)']},
+                {label:'Day 4', tasks:['Skim GPT-1 paper (Paper)', 'Write a summary of GPT architecture (Review)']},
+                {label:'Day 5', tasks:['Set up a simple token counting script (Project)', 'Explore Hugging Face transformers library (Setup)']},
+                {label:'Day 6', tasks:['Read “Language Models are Unsupervised Multitask Learners” (Paper)']},
+                {label:'Day 7', tasks:['Build a tiny text generator with HF pipeline (Project)', 'Reflect on what you learned about LLMs (Review)']}
+            ]},
+            { num:16, title:'Tokenization', days:[
+                {label:'Day 1', tasks:['LLM Book Chapter 2: tokenization, BPE (LLM Book)', 'Implement basic BPE algorithm (Project)']},
+                {label:'Day 2', tasks:['Deep-ML: Text Processing Problems (Deep-ML)', 'TorchLeet: Tokenization Exercises (TorchLeet)']},
+                {label:'Day 3', tasks:['Study different tokenizers (WordPiece, Unigram) (Review)', 'Compare outputs (Review)']},
+                {label:'Day 4', tasks:['Build a simple tokenizer from scratch (Project)']},
+                {label:'Day 5', tasks:['Test tokenizer on sample text (Project)', 'Understand vocabulary size trade-offs (Review)']},
+                {label:'Day 6', tasks:['Experiment with Hugging Face tokenizers (Project)', 'Read BPE paper (Paper)']},
+                {label:'Day 7', tasks:['Write a tokenizer comparison document (Review)', 'Prepare for embeddings week (Setup)']}
+            ]},
+            { num:17, title:'Embeddings', days:[
+                {label:'Day 1', tasks:['LLM Book Chapter 3: embeddings (LLM Book)', 'Implement word2vec-style embeddings (Project)']},
+                {label:'Day 2', tasks:['AI Engineer Roadmap: Embeddings, Embedding APIs, Sentence Transformers (Roadmap)']},
+                {label:'Day 3', tasks:['Deep-ML: Embedding Similarity, Semantic Search (Deep-ML)']},
+                {label:'Day 4', tasks:['Experiment with pre-trained embeddings (GloVe, BERT) (Project)']},
+                {label:'Day 5', tasks:['Build a small semantic search demo using cosine similarity (Project)']},
+                {label:'Day 6', tasks:['Explore t‑SNE visualization of embeddings (Project)', 'Read about embedding dimension trade-offs (Study)']},
+                {label:'Day 7', tasks:['Document your semantic search demo (Review)', 'Write notes on embedding space properties (Review)']}
+            ]},
+            { num:18, title:'Attention mechanisms', days:[
+                {label:'Day 1', tasks:['LLM Book Chapter 4: self-attention (LLM Book)', 'Implement scaled dot-product attention (Project)']},
+                {label:'Day 2', tasks:['Multi-head attention (Project)', 'Deep-ML: Attention Problems (Deep-ML)']},
+                {label:'Day 3', tasks:['TorchLeet: Attention Track (TorchLeet)', 'Read “Attention Is All You Need” (Paper)']},
+                {label:'Day 4', tasks:['Take notes on paper, understand each component (Review)']},
+                {label:'Day 5', tasks:['Implement multi-head attention in PyTorch (Project)']},
+                {label:'Day 6', tasks:['Verify against paper formulas (Project)', 'Plot attention maps (Project)']},
+                {label:'Day 7', tasks:['Write a deep-dive on attention (Review)', 'Prepare for transformer block week (Setup)']}
+            ], note:'Paper reading starts here. Budget extra time for deep understanding.' },
+            { num:19, title:'Transformer block & GPT architecture', days:[
+                {label:'Day 1', tasks:['LLM Book Chapter 5: transformer block (LLM Book)', 'Code a transformer block (Project)']},
+                {label:'Day 2', tasks:['GPT architecture details (Project)', 'TorchLeet: Transformer Collection (TorchLeet)']},
+                {label:'Day 3', tasks:['Read BERT paper (Devlin et al.) (Paper)']},
+                {label:'Day 4', tasks:['Read GPT-1 paper (Radford et al.) (Paper)']},
+                {label:'Day 5', tasks:['Compare BERT vs GPT architectures (Review)']},
+                {label:'Day 6', tasks:['Write a comparison table (Review)', 'Implement a simple BERT embedding extractor (Project)']},
+                {label:'Day 7', tasks:['Prepare for mini GPT milestone (Setup)', 'Consolidate all Phase 3 knowledge so far (Review)']}
+            ]},
+            { num:20, title:'Mini GPT milestone', days:[
+                {label:'Day 1', tasks:['Set up character-level language model training loop (Project)']},
+                {label:'Day 2', tasks:['Implement positional encoding (Project)', 'TorchLeet: GPT Internals (TorchLeet)']},
+                {label:'Day 3', tasks:['Train mini GPT on a text corpus (e.g., Shakespeare) (Project)']},
+                {label:'Day 4', tasks:['Generate text, tune temperature (Project)', 'Read GPT-2 paper (Radford et al.) (Paper)']},
+                {label:'Day 5', tasks:['Optimise generation (top-k, top-p) (Project)']},
+                {label:'Day 6', tasks:['Write a blog-style summary of your mini GPT (Review)', 'Record a demo video (optional) (Project)']},
+                {label:'Day 7', tasks:['Celebrate milestone! 🎉 (Review)', 'Plan for LLM training phase (Setup)']}
+            ], milestone:'Implement a mini GPT (character-level language model). Must train and generate coherent text.' }
+          ]
+        },
+        { id:'p4', label:'Phase 4', title:'LLM Training & Fine-tuning', weeks:'Weeks 21–24', goal:'Understand how models are pretrained, fine-tuned, and aligned.', color:'#FAECE7', textColor:'#712B13',
+          weeks_data:[
+            { num:21, title:'Pretraining', days:[
+                {label:'Day 1', tasks:['LLM Book Chapter 6: pretraining (LLM Book)', 'Deep-ML: Language Modeling problems (Deep-ML)']},
+                {label:'Day 2', tasks:['TorchLeet: Training Loops (TorchLeet)', 'Set up a small pretraining experiment (Project)']},
+                {label:'Day 3', tasks:['Read GPT-3 paper (Brown et al.) (Paper)', 'Take notes on scaling laws (Review)']},
+                {label:'Day 4', tasks:['Understand data preparation for LLMs (Review)', 'Explore Hugging Face datasets (Setup)']},
+                {label:'Day 5', tasks:['Write a summary of pretraining objectives (CLM, MLM) (Review)']},
+                {label:'Day 6', tasks:['Experiment with a small pretraining run on Colab (Project)', 'Monitor loss curves (Project)']},
+                {label:'Day 7', tasks:['Read Chinchilla scaling paper (Paper)', 'Consolidate notes (Review)']}
+            ]},
+            { num:22, title:'Fine-tuning & LoRA', days:[
+                {label:'Day 1', tasks:['LLM Book Chapter 7: fine-tuning (LLM Book)', 'AI Engineer Roadmap: OpenAI Fine-tuning (Roadmap)']},
+                {label:'Day 2', tasks:['Read LoRA paper (Hu et al.) (Paper)']},
+                {label:'Day 3', tasks:['Implement LoRA from scratch in PyTorch (Project)']},
+                {label:'Day 4', tasks:['Fine-tune a small model with LoRA on a custom dataset (Project)']},
+                {label:'Day 5', tasks:['Evaluate fine-tuned model, compare with baseline (Project)']},
+                {label:'Day 6', tasks:['Experiment with different LoRA ranks (Project)', 'Read QLoRA paper (Paper)']},
+                {label:'Day 7', tasks:['Write a fine-tuning guide (Review)', 'Prepare for RLHF week (Setup)']}
+            ]},
+            { num:23, title:'Instruction tuning, RLHF & DPO', days:[
+                {label:'Day 1', tasks:['LLM Book remaining chapters: instruction tuning (LLM Book)']},
+                {label:'Day 2', tasks:['Read RLHF paper (Ziegler et al.) (Paper)']},
+                {label:'Day 3', tasks:['Read DPO paper (Rafailov et al.) (Paper)']},
+                {label:'Day 4', tasks:['Compare RLHF vs DPO, write pros/cons (Review)']},
+                {label:'Day 5', tasks:['Experiment with an open-source instruction-tuned model (Project)']},
+                {label:'Day 6', tasks:['Try DPO on a small reward dataset (Project)', 'Read Anthropic’s RLHF paper (Paper)']},
+                {label:'Day 7', tasks:['Summarise alignment techniques (Review)', 'Plan for GPT chatbot milestone (Setup)']}
+            ]},
+            { num:24, title:'GPT chatbot milestone', days:[
+                {label:'Day 1', tasks:['Design chatbot personality and dataset (Project)']},
+                {label:'Day 2', tasks:['Fine-tune a GPT-2/GPT-Neo model with LoRA (Project)']},
+                {label:'Day 3', tasks:['Deploy to Hugging Face Spaces (Project)']},
+                {label:'Day 4', tasks:['Read RAG paper (Lewis et al.) – ahead of Phase 5 (Paper)']},
+                {label:'Day 5', tasks:['Test chatbot, gather feedback (Project)']},
+                {label:'Day 6', tasks:['Improve prompts and fine-tuning based on feedback (Project)']},
+                {label:'Day 7', tasks:['Write a case study on your chatbot (Review)', 'Phase 4 milestone achieved! 🎉']}
+            ], milestone:'Build: GPT chatbot with fine-tuned personality or domain expertise. Deploy to HF Spaces.' }
+          ]
+        },
+        { id:'p5', label:'Phase 5', title:'AI Engineer Core Stack', weeks:'Weeks 25–28', goal:'Production AI systems. Vector DBs, RAG, Agents, Multimodal.', color:'#E1F5EE', textColor:'#085041',
+          weeks_data:[
+            { num:25, title:'Vector databases', days:[
+                {label:'Day 1', tasks:['Study ChromaDB basics (Study)', 'Set up Chroma locally (Setup)']},
+                {label:'Day 2', tasks:['Understand FAISS and Pinecone tradeoffs (Study)', 'AI Engineer Roadmap: Vector DB section (Roadmap)']},
+                {label:'Day 3', tasks:['TorchLeet: Embeddings Collection (TorchLeet)', 'Ingest documents into Chroma (Project)']},
+                {label:'Day 4', tasks:['Build semantic search engine over a custom document set (Project)']},
+                {label:'Day 5', tasks:['Optimise retrieval with different embedding models (Project)']},
+                {label:'Day 6', tasks:['Experiment with hybrid search (keyword + vector) (Project)', 'Read about ANN algorithms (Study)']},
+                {label:'Day 7', tasks:['Document your vector DB learnings (Review)', 'Prepare for RAG week (Setup)']}
+            ], milestone:'Build: semantic search engine with Chroma + Sentence Transformers' },
+            { num:26, title:'RAG', days:[
+                {label:'Day 1', tasks:['Study chunking strategies, retrieval methods (Study)']},
+                {label:'Day 2', tasks:['AI Engineer Roadmap: RAG & Implementation, LangChain, LlamaIndex (Roadmap)']},
+                {label:'Day 3', tasks:['Build a basic PDF chatbot – upload, chunk, retrieve (Project)']},
+                {label:'Day 4', tasks:['Add generation with GPT/LLaMA, implement citations (Project)']},
+                {label:'Day 5', tasks:['Test on multiple PDFs, improve pipeline (Project)']},
+                {label:'Day 6', tasks:['Add conversation history (Project)', 'Explore re-ranking (Study)']},
+                {label:'Day 7', tasks:['Write a RAG best practices note (Review)', 'Milestone: PDF chatbot complete']}
+            ], milestone:'Build: PDF chatbot — upload any PDF, ask questions, get cited answers' },
+            { num:27, title:'AI Agents', days:[
+                {label:'Day 1', tasks:['Study ReAct prompting, tool calling patterns (Study)']},
+                {label:'Day 2', tasks:['AI Engineer Roadmap: Agents section, OpenAI Functions/Tools (Roadmap)']},
+                {label:'Day 3', tasks:['TorchLeet: Agent Collection (TorchLeet)', 'Implement a simple function-calling agent (Project)']},
+                {label:'Day 4', tasks:['Build a research agent that searches web + summarises + cites (Project)']},
+                {label:'Day 5', tasks:['Test with multiple queries, handle errors gracefully (Project)']},
+                {label:'Day 6', tasks:['Add memory/persistence (Project)', 'Explore LangGraph or CrewAI (Study)']},
+                {label:'Day 7', tasks:['Write an agent design document (Review)', 'Milestone: research agent complete']}
+            ], milestone:'Build: research agent that searches the web + summarizes + cites sources' },
+            { num:28, title:'Multimodal AI', days:[
+                {label:'Day 1', tasks:['Study CLIP, LLaVA (vision models) (Study)']},
+                {label:'Day 2', tasks:['Study Whisper (speech-to-text), DALL-E / Stable Diffusion (Study)']},
+                {label:'Day 3', tasks:['AI Engineer Roadmap: Multimodal section fully (Roadmap)']},
+                {label:'Day 4', tasks:['Build an image Q&A app (Project)']},
+                {label:'Day 5', tasks:['Add speech-to-text transcription pipeline (Project)']},
+                {label:'Day 6', tasks:['Integrate text-to-speech output (Project)', 'Test on real-world audio/video files (Project)']},
+                {label:'Day 7', tasks:['Document your multimodal app (Review)', 'Milestone: multimodal app complete']}
+            ], milestone:'Build: image Q&A app + speech-to-text transcription pipeline' }
+          ]
+        },
+        { id:'p6', label:'Phase 6', title:'Mastery & Capstone', weeks:'Weeks 29–30', goal:'Consolidate everything, fill gaps, ship a complete AI platform.', color:'#F1EFE8', textColor:'#2C2C2A',
+          weeks_data:[
+            { num:29, title:'Deep-ML sweep + advanced tracks', days:[
+                {label:'Day 1', tasks:['Deep-ML: solve all remaining unsolved problems (start) (Deep-ML)']},
+                {label:'Day 2', tasks:['TorchLeet: CNN Track (first half) (TorchLeet)']},
+                {label:'Day 3', tasks:['TorchLeet: RNN Track (TorchLeet)']},
+                {label:'Day 4', tasks:['TorchLeet: Transformer Track (TorchLeet)']},
+                {label:'Day 5', tasks:['Revisit any weak week, consolidate notes (Review)']},
+                {label:'Day 6', tasks:['Fill knowledge gaps (Review)', 'Take a practice mock interview (Review)']},
+                {label:'Day 7', tasks:['Plan capstone architecture (Setup)', 'Gather datasets/APIs needed (Setup)']}
+            ]},
+            { num:30, title:'Capstone platform', days:[
+                {label:'Day 1', tasks:['Set up project: user auth (Clerk/Supabase) (Project)', 'File upload (PDF/images) (Project)']},
+                {label:'Day 2', tasks:['Build RAG pipeline over uploaded files (Project)']},
+                {label:'Day 3', tasks:['Implement agent with web search + tool use (Project)']},
+                {label:'Day 4', tasks:['Add chat interface with streaming (Project)', 'Model toggle (OpenAI + Ollama) (Project)']},
+                {label:'Day 5', tasks:['Integrate vector database, multimodal support (image input) (Project)']},
+                {label:'Day 6', tasks:['Deploy to a cloud platform (Project)', 'Write documentation and README (Project)']},
+                {label:'Day 7', tasks:['Final testing and polish (Project)', '🎉 Capstone complete!']}
+            ], note:'This is a 2‑week project compressed into 1. Scope wisely: auth + RAG + agents + chat is already a strong portfolio. Multimodal can ship post‑30.' }
+          ]
+        }];
+
+        // ── State ──
+        let completedWeeks = new Set(JSON.parse(localStorage.getItem('aiml_done') || '[]'));
+        let completedDays = new Set(JSON.parse(localStorage.getItem('aiml_days_done') || '[]'));
+        let notes = JSON.parse(localStorage.getItem('aiml_notes') || '{}');
+        let currentFilter = '';
+        let focusedWeekNum = null;
+        const TOTAL_WEEKS = 30;
+        const CIRCUMFERENCE = 2 * Math.PI * 52;
+
+        function saveWeeks() { localStorage.setItem('aiml_done', JSON.stringify([...completedWeeks])); }
+        function saveDays() { localStorage.setItem('aiml_days_done', JSON.stringify([...completedDays])); }
+        function saveNotes() { localStorage.setItem('aiml_notes', JSON.stringify(notes)); }
+        function getDayId(weekNum, dayIdx) { return `${weekNum}-${dayIdx}`; }
+
+        // Format task text with colourful tags
+        function formatTask(taskText) {
+            return taskText.replace(/\(([^)]+)\)/g, (match, tag) => {
+                const tagLower = tag.toLowerCase();
+                let cls = '';
+                if (tagLower === 'strang') cls = 'resource-tag tag-strang';
+                else if (tagLower === 'mfml') cls = 'resource-tag tag-mfml';
+                else if (tagLower === 'nnfs') cls = 'resource-tag tag-nnfs';
+                else if (tagLower === 'llm book') cls = 'resource-tag tag-llmbook';
+                else if (tagLower === 'deep-ml') cls = 'resource-tag tag-deepml';
+                else if (tagLower === 'torchleet') cls = 'resource-tag tag-torchleet';
+                else if (tagLower === 'roadmap') cls = 'resource-tag tag-roadmap';
+                else if (tagLower === 'paper') cls = 'resource-tag tag-paper';
+                else if (tagLower === 'project') cls = 'resource-tag tag-project';
+                else if (tagLower === 'review') cls = 'resource-tag tag-review';
+                else if (tagLower === 'setup') cls = 'resource-tag tag-setup';
+                else if (tagLower === 'study') cls = 'resource-tag tag-study';
+                else cls = 'resource-tag';
+                return `<span class="${cls}">${tag}</span>`;
+            });
+        }
+
+        // ── Tabs ──
+        function switchTab(tab) {
+            document.getElementById('roadmap-view').style.display = tab === 'roadmap' ? 'block' : 'none';
+            document.getElementById('resources-view').style.display = tab === 'resources' ? 'block' : 'none';
+            document.getElementById('tab-roadmap').classList.toggle('active', tab === 'roadmap');
+            document.getElementById('tab-resources').classList.toggle('active', tab === 'resources');
+            if (tab === 'resources') generateResources();
+        }
+
+        function generateResources() {
+            const container = document.getElementById('resources-content');
+            const resourceMap = new Map();
+            const allPapers = [];
+            phases.forEach(p => p.weeks_data.forEach(w => w.days.forEach(d => d.tasks.forEach(task => {
+                const known = ['Gilbert Strang','Math for ML','NNFS','LLM Book','Deep-ML','TorchLeet','AI Engineer Roadmap','Papers'];
+                for (const k of known) if (task.includes(k)) {
+                    if (!resourceMap.has(k)) resourceMap.set(k, []);
+                    resourceMap.get(k).push(task);
+                    if (k==='Papers') allPapers.push(task);
+                }
+            }))));
+            let html = '<h2 style="margin-bottom:1rem;">📚 All Learning Resources</h2>';
+            html += '<div class="resource-group"><h3>📖 Primary Resources</h3><ul class="resource-list">';
+            for (const [label, items] of resourceMap.entries()) {
+                const desc = { 'Gilbert Strang':'MIT 18.06 Linear Algebra lectures','Math for ML':'Mathematics for Machine Learning (Deisenroth et al.)','NNFS':'Neural Networks from Scratch','LLM Book':'Build a Large Language Model (From Scratch) by Raschka','Deep-ML':'Deep-ML.com – ML coding challenges','TorchLeet':'TorchLeet – PyTorch practice problems','AI Engineer Roadmap':'roadmap.sh/ai-engineer' }[label] || '';
+                html += `<li><span class="resource-bullet"></span><strong>${label}</strong> <span class="resource-desc">— ${desc}</span></li>`;
+            }
+            html += '</ul></div>';
+            if (allPapers.length) {
+                html += '<div class="resource-group"><h3>📄 Research Papers</h3><ul class="resource-list">';
+                [...new Set(allPapers)].forEach(p => html += `<li class="paper-item"><span class="resource-bullet" style="background:#F0A92D;"></span>${p}</li>`);
+                html += '</ul></div>';
+            }
+            container.innerHTML = html;
+        }
+
+        // ── Theme ──
+        function applyTheme() {
+            const saved = localStorage.getItem('aiml_theme');
+            if (saved === 'dark') {
+                document.body.classList.add('dark');
+                document.getElementById('theme-toggle').textContent = '☀️';
+            } else {
+                document.body.classList.remove('dark');
+                document.getElementById('theme-toggle').textContent = '🌙';
+            }
+        }
+        function toggleTheme() {
+            if (document.body.classList.contains('dark')) {
+                document.body.classList.remove('dark');
+                localStorage.setItem('aiml_theme', 'light');
+                document.getElementById('theme-toggle').textContent = '🌙';
+            } else {
+                document.body.classList.add('dark');
+                localStorage.setItem('aiml_theme', 'dark');
+                document.getElementById('theme-toggle').textContent = '☀️';
+            }
+        }
+        applyTheme();
+
+        let toastTimer;
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add('show');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+        }
+        function spawnConfetti(x, y) {
+            const container = document.getElementById('confetti-container');
+            const emojis = ['✨','🎉','⭐','💫','🌟','🎯','🔥','💎'];
+            const fragment = document.createDocumentFragment();
+            for (let i=0; i<28; i++) {
+                const p = document.createElement('span');
+                p.className = 'confetti-particle';
+                p.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+                p.style.left = x+'px'; p.style.top = y+'px';
+                p.style.setProperty('--dx', (Math.random()*180-90)+'px');
+                p.style.setProperty('--dy', -(Math.random()*160+60)+'px');
+                p.style.setProperty('--rot', (Math.random()*540-270)+'deg');
+                fragment.appendChild(p);
+            }
+            container.appendChild(fragment);
+            setTimeout(() => { while(container.firstChild) container.removeChild(container.firstChild); }, 1800);
+        }
+
+        function toggleDay(e, weekNum, dayIdx) {
+            e.stopPropagation();
+            const id = getDayId(weekNum, dayIdx);
+            if (completedDays.has(id)) completedDays.delete(id);
+            else completedDays.add(id);
+            saveDays(); renderAll();
+        }
+        function toggleWeekCheck(e, weekNum) {
+            e.stopPropagation();
+            if (completedWeeks.has(weekNum)) completedWeeks.delete(weekNum);
+            else {
+                completedWeeks.add(weekNum);
+                if (!localStorage.getItem('aiml_start_date')) localStorage.setItem('aiml_start_date', new Date().toISOString().split('T')[0]);
+                const rect = e.target.getBoundingClientRect();
+                spawnConfetti(rect.left+rect.width/2, rect.top+rect.height/2);
+                showToast('✅ Week '+weekNum+' completed!');
+            }
+            saveWeeks(); renderAll();
+        }
+        function toggleWeekBody(weekNum) {
+            const body = document.getElementById('wb-'+weekNum);
+            if (body) body.classList.toggle('open');
+        }
+        function togglePhase(phaseId) {
+            const body = document.getElementById('pb-'+phaseId);
+            const icon = document.getElementById('pi-'+phaseId);
+            if (body) body.classList.toggle('open');
+            if (icon) icon.classList.toggle('open');
+            if (focusedWeekNum) setTimeout(() => focusWeekCard(focusedWeekNum), 500);
+        }
+        function markPhaseAll(phaseId, e) {
+            e.stopPropagation();
+            const phase = phases.find(p=>p.id===phaseId);
+            if (!phase) return;
+            const allNums = phase.weeks_data.map(w=>w.num);
+            const allDone = allNums.every(n=>completedWeeks.has(n));
+            if (allDone) {
+                allNums.forEach(n=>completedWeeks.delete(n));
+                showToast('↩️ '+phase.label+' unmarked');
+            } else {
+                allNums.forEach(n=>completedWeeks.add(n));
+                if (!localStorage.getItem('aiml_start_date')) localStorage.setItem('aiml_start_date', new Date().toISOString().split('T')[0]);
+                showToast('✅ '+phase.label+' fully completed!');
+                const rect = e.target.getBoundingClientRect();
+                spawnConfetti(rect.left+rect.width/2, rect.top+rect.height/2);
+            }
+            saveWeeks(); renderAll();
+        }
+        function handleNoteInput(weekNum, value) {
+            if (value.trim()) notes[weekNum] = value.trim();
+            else delete notes[weekNum];
+            saveNotes();
+            const btn = document.querySelector('.week-note-btn[data-week="'+weekNum+'"]');
+            if (btn) btn.classList.toggle('has-note', !!notes[weekNum]);
+        }
+
+        function onSearch(value) {
+            currentFilter = value.trim().toLowerCase();
+            document.getElementById('search-clear').classList.toggle('visible', !!currentFilter);
+            renderAll();
+        }
+        function clearSearch() {
+            document.getElementById('search-input').value = '';
+            currentFilter = '';
+            document.getElementById('search-clear').classList.remove('visible');
+            renderAll();
+            document.getElementById('search-input').focus();
+        }
+        function matchesFilter(weekData, phaseData) {
+            if (!currentFilter) return true;
+            const text = [
+                phaseData.title, phaseData.goal, phaseData.label,
+                weekData.title, 'week '+weekData.num,
+                ...weekData.days.flatMap(d=>[d.label, ...d.tasks]),
+                weekData.milestone||'', weekData.note||'', notes[weekData.num]||''
+            ].join(' ').toLowerCase();
+            return text.includes(currentFilter);
+        }
+
+        function renderAll() {
+            const container = document.getElementById('phases');
+            container.innerHTML = '';
+            const qj = document.getElementById('quick-jump');
+            qj.innerHTML = phases.map(p=>{
+                const doneW = p.weeks_data.filter(w=>completedWeeks.has(w.num)).length;
+                return `<span class="chip" data-phase-id="${p.id}" onclick="scrollToPhase('${p.id}')" style="background:${p.color}20;color:${p.textColor};border-color:${p.color}">${p.label} (${doneW}/${p.weeks_data.length})</span>`;
+            }).join('');
+
+            phases.forEach(phase => {
+                let anyWeekMatches = false;
+                let weeksHtml = '';
+                phase.weeks_data.forEach(w => {
+                    const weekMatches = matchesFilter(w, phase);
+                    if (weekMatches) anyWeekMatches = true;
+                    if (!weekMatches && currentFilter) return;
+
+                    const totalDays = w.days.length;
+                    const doneDays = w.days.filter((_,i)=>completedDays.has(getDayId(w.num,i))).length;
+                    let daysHtml = '';
+                    w.days.forEach((d, i) => {
+                        const dayId = getDayId(w.num, i);
+                        const isDayDone = completedDays.has(dayId);
+                        daysHtml += `
+                        <div class="day-item">
+                            <div class="day-checkbox ${isDayDone?'done':''}" onclick="toggleDay(event,${w.num},${i})" title="${isDayDone?'Mark incomplete':'Mark complete'}"></div>
+                            <div class="day-label">${d.label}</div>
+                            <div class="day-tasks"><ul>${d.tasks.map(t=>`<li>${formatTask(t)}</li>`).join('')}</ul></div>
+                        </div>`;
+                    });
+
+                    let bodyContent = `
+                    <textarea class="week-note-input" placeholder="📝 Personal notes for Week ${w.num}…" 
+                        oninput="handleNoteInput(${w.num}, this.value)" 
+                        onblur="handleNoteInput(${w.num}, this.value)">${notes[w.num] || ''}</textarea>
+                    <div class="day-list">${daysHtml}</div>`;
+                    if (w.note) bodyContent += `<div class="note-box"><span class="note-icon">💡</span><span>${w.note}</span></div>`;
+                    if (w.milestone) bodyContent += `<div class="milestone"><span>🏆</span><span>${w.milestone}</span></div>`;
+
+                    const weekDone = completedWeeks.has(w.num);
+                    weeksHtml += `
+                    <div class="week-card" style="${weekDone?'opacity:0.65':''}" data-week-num="${w.num}">
+                        <div class="week-header" onclick="toggleWeekBody(${w.num})">
+                            <span class="week-num">Week ${w.num}</span>
+                            <span class="week-title">${w.title}</span>
+                            <span class="week-day-progress">${doneDays}/${totalDays} days</span>
+                            <button class="week-note-btn ${notes[w.num]?'has-note':''}" data-week="${w.num}" 
+                                onclick="event.stopPropagation(); toggleWeekBody(${w.num}); setTimeout(()=>document.getElementById('note-${w.num}').focus(),400)">📝</button>
+                            <div class="week-check ${weekDone?'done':''}" onclick="toggleWeekCheck(event,${w.num})"
+                                title="${weekDone?'Mark incomplete':'Mark complete'}" role="checkbox" aria-checked="${weekDone}"
+                                aria-label="Week ${w.num} complete"></div>
+                        </div>
+                        <div class="week-body" id="wb-${w.num}">${bodyContent}</div>
+                    </div>`;
+                });
+
+                if (currentFilter && !anyWeekMatches) return;
+
+                const totalWeeks = phase.weeks_data.length;
+                const doneWeeks = phase.weeks_data.filter(w=>completedWeeks.has(w.num)).length;
+                const phaseOpen = currentFilter ? anyWeekMatches : true;
+                const div = document.createElement('div');
+                div.style.marginBottom = '1.5rem';
+                div.id = 'phase-'+phase.id;
+                div.innerHTML = `
+                <div class="phase-header" onclick="togglePhase('${phase.id}')">
+                    <div class="phase-icon" style="background:${phase.color};color:${phase.textColor}">${phase.label}</div>
+                    <div class="phase-title"><h2>${phase.title}</h2><p>${phase.weeks} · ${phase.goal}</p></div>
+                    <button class="phase-check-all" onclick="markPhaseAll('${phase.id}',event)">
+                        ${doneWeeks===totalWeeks?'↩️ All':'✓ All'}
+                    </button>
+                    <span class="phase-progress">${doneWeeks}/${totalWeeks}</span>
+                    <i class="ti ti-chevron-down phase-toggle ${phaseOpen?'open':''}" id="pi-${phase.id}">▼</i>
+                </div>
+                <div class="phase-body ${phaseOpen?'open':''}" id="pb-${phase.id}">${weeksHtml || (currentFilter?'<div style="padding:1rem;color:var(--text-tertiary);text-align:center">No matching weeks</div>':'')}</div>`;
+                container.appendChild(div);
+            });
+
+            if (focusedWeekNum) setTimeout(()=>focusWeekCard(focusedWeekNum),100);
+            updateProgress();
+        }
+
+        function focusWeekCard(weekNum) {
+            document.querySelectorAll('.week-card.focused').forEach(el=>el.classList.remove('focused'));
+            const card = document.querySelector(`.week-card[data-week-num="${weekNum}"]`);
+            if (card) {
+                card.classList.add('focused');
+                card.scrollIntoView({behavior:'smooth',block:'center'});
+                const phaseBody = card.closest('.phase-body');
+                if (phaseBody && !phaseBody.classList.contains('open')) {
+                    phaseBody.classList.add('open');
+                    const phaseId = phaseBody.id.replace('pb-','');
+                    const icon = document.getElementById('pi-'+phaseId);
+                    if (icon) icon.classList.add('open');
+                }
+                const weekBody = card.querySelector('.week-body');
+                if (weekBody && !weekBody.classList.contains('open')) weekBody.classList.add('open');
+                focusedWeekNum = weekNum;
+            }
+        }
+        function scrollToPhase(phaseId) {
+            const el = document.getElementById('phase-'+phaseId);
+            if (el) {
+                el.scrollIntoView({behavior:'smooth',block:'start'});
+                const body = document.getElementById('pb-'+phaseId);
+                const icon = document.getElementById('pi-'+phaseId);
+                if (body && !body.classList.contains('open')) { body.classList.add('open'); if (icon) icon.classList.add('open'); }
+                const header = el.querySelector('.phase-header');
+                if (header) { header.style.boxShadow = '0 0 0 4px rgba(59,130,246,0.35)'; setTimeout(()=>header.style.boxShadow='',1200); }
+            }
+        }
+
+        function updateProgress() {
+            const done = completedWeeks.size;
+            document.getElementById('global-count').textContent = done + ' / ' + TOTAL_WEEKS + ' weeks';
+            document.getElementById('global-bar').style.width = (done/TOTAL_WEEKS*100) + '%';
+            const pct = Math.round((done/TOTAL_WEEKS)*100);
+            document.getElementById('dash-ring-fill').style.strokeDashoffset = CIRCUMFERENCE - (pct/100)*CIRCUMFERENCE;
+            document.getElementById('dash-pct').textContent = pct+'%';
+
+            let curPhase='Phase 1', curWeek=1, nextMilestone=null, found=false;
+            for (const p of phases) for (const w of p.weeks_data) {
+                if (!completedWeeks.has(w.num) && !found) { curPhase=p.label; curWeek=w.num; found=true; }
+                if (!completedWeeks.has(w.num) && w.milestone && !nextMilestone) nextMilestone='Week '+w.num+' — '+w.milestone.substring(0,50)+'…';
+            }
+            if (!nextMilestone) nextMilestone='All milestones completed! 🎉';
+            if (done>=TOTAL_WEEKS) { curPhase='Phase 6'; curWeek=30; }
+            document.getElementById('dash-current').textContent = curPhase+' · Week '+curWeek;
+            document.getElementById('dash-milestone').textContent = nextMilestone;
+            document.getElementById('dash-remaining').textContent = (TOTAL_WEEKS-done)+' weeks';
+
+            const pctDone = Math.round((done/TOTAL_WEEKS)*100);
+            const msgs = ['Ready to begin the journey! 🚀','Great start! 💪','Solid progress! 🔥','Halfway there! ⚡','Deep work zone! 🎯','Almost there! 🏆','One week left! 🌟','All 30 weeks complete! 🎉👑'];
+            const idx = pctDone===0?0:pctDone<15?1:pctDone<35?2:pctDone<55?3:pctDone<75?4:pctDone<95?5:pctDone<100?6:7;
+            document.getElementById('dash-motivation').textContent = msgs[idx];
+
+            document.querySelectorAll('.quick-jump .chip').forEach(chip=>{
+                chip.classList.toggle('active-chip', chip.dataset.phaseId === (found ? phases.find(p=>p.label===curPhase)?.id : 'p6'));
+            });
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA') return;
+            if (e.ctrlKey||e.metaKey||e.altKey) return;
+            const visibleCards = Array.from(document.querySelectorAll('.week-card:not(.filtered-out)')).filter(card=>card.closest('.phase-body')?.classList.contains('open'));
+            if (!visibleCards.length) return;
+            let idx = visibleCards.findIndex(c=>c.classList.contains('focused')); if (idx===-1) idx=0;
+            if (e.key==='ArrowDown'||e.key==='ArrowUp') {
+                e.preventDefault();
+                idx = e.key==='ArrowDown' ? Math.min(idx+1,visibleCards.length-1) : Math.max(idx-1,0);
+                const weekNum = parseInt(visibleCards[idx].dataset.weekNum);
+                focusedWeekNum = weekNum; focusWeekCard(weekNum);
+            }
+            if (e.key===' ' && focusedWeekNum!==null) {
+                e.preventDefault();
+                const card = document.querySelector(`.week-card[data-week-num="${focusedWeekNum}"]`);
+                if (card) { const check = card.querySelector('.week-check'); if (check) toggleWeekCheck({stopPropagation:()=>{}, target:check}, focusedWeekNum); }
+            }
+        });
+        document.addEventListener('click', function(e) {
+            const card = e.target.closest('.week-card');
+            if (card && card.dataset.weekNum) {
+                focusedWeekNum = parseInt(card.dataset.weekNum);
+                document.querySelectorAll('.week-card.focused').forEach(el=>el.classList.remove('focused'));
+                card.classList.add('focused');
+            }
+        });
+
+        function exportData() {
+            const data = {
+                completedWeeks: [...completedWeeks], completedDays: [...completedDays], notes,
+                startDate: localStorage.getItem('aiml_start_date')||null,
+                theme: localStorage.getItem('aiml_theme')||'light', exportedAt: new Date().toISOString()
+            };
+            const blob = new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+            const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+            a.download = 'ai-engineer-roadmap-'+new Date().toISOString().split('T')[0]+'.json';
+            a.click(); URL.revokeObjectURL(a.href); showToast('📥 Progress exported!');
+        }
+        function importData(event) {
+            const file = event.target.files[0]; if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    if (data.completedWeeks) { completedWeeks = new Set(data.completedWeeks); saveWeeks(); }
+                    if (data.completedDays) { completedDays = new Set(data.completedDays); saveDays(); }
+                    if (data.notes) { notes = data.notes; saveNotes(); }
+                    if (data.startDate) localStorage.setItem('aiml_start_date', data.startDate);
+                    if (data.theme) { localStorage.setItem('aiml_theme', data.theme); applyTheme(); }
+                    renderAll(); showToast('📤 Progress imported!');
+                } catch { showToast('⚠️ Invalid file'); }
+            };
+            reader.readAsText(file); event.target.value = '';
+        }
+        function resetAll() {
+            if (confirm('⚠️ Delete ALL progress and notes?')) {
+                if (confirm('🚨 Final warning: irreversible.')) {
+                    completedWeeks.clear(); completedDays.clear(); notes={};
+                    saveWeeks(); saveDays(); saveNotes(); localStorage.removeItem('aiml_start_date');
+                    focusedWeekNum=null; document.getElementById('search-input').value=''; currentFilter='';
+                    document.getElementById('search-clear').classList.remove('visible');
+                    renderAll(); showToast('🔄 All progress reset');
+                }
+            }
+        }
+
+        renderAll();
+        if (completedWeeks.size===0) {
+            setTimeout(()=>{
+                const pb1=document.getElementById('pb-p1');
+                if(pb1&&!pb1.classList.contains('open')){ pb1.classList.add('open'); document.getElementById('pi-p1')?.classList.add('open'); }
+            },200);
+        }
+    </script>
+</body>
+</html>
